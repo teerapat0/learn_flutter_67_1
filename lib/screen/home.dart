@@ -25,18 +25,63 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Image.asset("assets/images/ronaldo.jpg", width: 200, height: 200),
-        const SizedBox(height: 20),
-        Image.network(
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Cristiano_Ronaldo_2018.jpg/640px-Cristiano_Ronaldo_2018.jpg",
-          width: 200,
-          height: 200,
-        ),
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextButton(
+            style: TextButton.styleFrom(
+              foregroundColor: const Color.fromARGB(255, 255, 14, 14),
+            ),
+            onPressed: () {
+              print("Button Pressed");
+            },
+            child: const Text(
+              " Click Me",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(height: 20),
+          FilledButton(
+            style: FilledButton.styleFrom(foregroundColor: Colors.white),
+            onPressed: () {
+              print("Filled Button Pressed");
+            },
+            child: const Text(
+              " Click Me",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(height: 20),
+          OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.red,
+              side: const BorderSide(color: Colors.pinkAccent, width: 2),
+            ),
+            onPressed: () {
+              print("Outlined Button Pressed");
+            },
+            child: const Text(
+              " Click Me",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () {
+              print("Elevated Button Pressed");
+            },
+            child: const Text(
+              " Click Me",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
